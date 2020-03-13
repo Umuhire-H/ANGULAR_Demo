@@ -1,0 +1,33 @@
+<div>
+  <h1>Binding</h1>
+  <div>
+    <h2>One-Way</h2>
+    <!-- Binding One-Way -->
+    <p>{{ title }}</p>
+  </div>
+  <div>
+    <h2>Two-Way</h2>
+    <!-- Binding Two-Way -->
+    <input [(ngModel)]="title">
+  </div>
+</div>
+<div>
+  <h1>Directive</h1>
+  <div>
+    <h2>Directive d'attribut</h2>
+    <p class="red">Static</p>
+    <p [class.red]="title == 'Demo'">RED</p>
+    <p [ngClass]="{'blue': title == 'Blue', 'red': title == 'Demo'}">BLUE</p>
+  </div>
+  <div>
+    <h2>Directive de type Eventment</h2>
+    <p (click)="sayHello($event)">Touch Me sempaï</p>
+  </div>
+  <div>
+    <h2>Directive de type Structurel</h2>
+    {{ items[0].nom }}
+    <app-list [data]="items" (delete)="executeDelete($event)"></app-list>
+    <!-- <p *ngFor="let item of items; let i=index; let isEven=even" [class.even]="isEven">{{ item.nom }} => {{ i }}</p> -->
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td>{{ item.nom }}</td>
+            <td>
+                <button (click)="editAction(item)">Edit</button>
+                <button (click)="deleteAction(item)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
